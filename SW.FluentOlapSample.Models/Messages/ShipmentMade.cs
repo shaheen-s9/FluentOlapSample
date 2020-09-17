@@ -1,4 +1,7 @@
-$HEADER$namespace $NAMESPACE$
+namespace SW.FluentOlapSample.Models
 {
-  public class $CLASS$ {$END$}
+    public class ShipmentMade
+    {
+        public int ShipmentId { get; set; }
+    }
 }

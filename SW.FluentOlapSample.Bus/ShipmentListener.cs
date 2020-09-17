@@ -1,15 +1,15 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using SW.PrimitiveTypes;
+using SW.FluentOlapSample.Models;
 
 namespace SW.FluentOlapSample.Api
 {
-    public class ShipmentListener : IConsume
+    public class ShipmentListener : IConsume<ShipmentMade>
     {
-        public Task<IEnumerable<string>> GetMessageTypeNames()
+        public Task Process(ShipmentMade message)
         {
-            throw new System.NotImplementedException();
+            
         }
-
     }
 }
