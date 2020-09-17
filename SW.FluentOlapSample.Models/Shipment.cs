@@ -20,6 +20,8 @@ namespace SW.FluentOlapSample.Models
         {
             // Associating this wide table with a message in the system to initiate expansion and population
             Handles("ShipmentMade", "ShipmentId");
+
+            // Expanding the courier using the Id
             Property(s => s.CourierId).GetFromService("couriers", new AnalyticalObject<Courier>());
         }
     }
