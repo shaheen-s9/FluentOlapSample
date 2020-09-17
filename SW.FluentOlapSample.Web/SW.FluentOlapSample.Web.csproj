@@ -4,4 +4,13 @@
         <TargetFramework>netcoreapp3.1</TargetFramework>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="SimplyWorks.Bus" Version="2.0.4" />
+      <PackageReference Include="SimplyWorks.FluentOlap" Version="2.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\SW.FluentOlapSample.Bus\SW.FluentOlapSample.Bus.csproj" />
+    </ItemGroup>
+
 </Project>

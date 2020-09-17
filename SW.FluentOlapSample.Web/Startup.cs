@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
+using SW.FluentOlap;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using SW.Bus;
+using SW.FluentOlapSample.Api;
 
 namespace SW.FluentOlapSample.Web
 {
@@ -16,6 +19,11 @@ namespace SW.FluentOlapSample.Web
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            // Rabbit mq configuration required
+            /*
+            services.AddBus();
+            services.AddBusConsume(typeof(ShipmentListener).Assembly);
+            */
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -27,7 +35,6 @@ namespace SW.FluentOlapSample.Web
             }
 
             app.UseRouting();
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapGet("/", async context => { await context.Response.WriteAsync("Hello World!"); });
